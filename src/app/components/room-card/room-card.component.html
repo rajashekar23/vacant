@@ -1,1 +1,43 @@
-<p>room-card works!</p>
+<section>
+  <ng-container *ngFor="let room of roomDetails">
+    <div class="card">
+      <mat-card class="example-card">
+        <!-- <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header> -->
+        <img mat-card-image [src]="room.imgURL[0]" alt="room_image" />
+        <mat-card-content>
+          <h3>
+            <strong>{{ room.price | currency : "INR" }}</strong>
+          </h3>
+          <div class="first" style="float: left; width: 50%">
+            <h5>{{ room.roomType }}</h5>
+          </div>
+          <div class="second" style="float: right; width: 50%">
+            <h5>{{ room.tenants }}</h5>
+          </div>
+          <div class="first" style="float: left; width: 50%">
+            <h5 *ngIf="room.isFurnished == true">Furnished</h5>
+            <h5 *ngIf="room.isFurnished == false">Not Furnished</h5>
+          </div>
+          <div class="second" style="float: right; width: 50%">
+            <h5 *ngIf="room.isParking == true">Parking</h5>
+            <h5 *ngIf="room.isParking == false">No Parking</h5>
+          </div>
+          <div>
+            <mat-icon>place</mat-icon>
+            <span
+              >{{ room.locality }}, {{ room.city }}, {{ room.pincode }}</span
+            >
+          </div>
+        </mat-card-content>
+        <!-- <mat-card-actions>
+          <button mat-button>Like</button>
+          <button mat-button>More Details</button>
+        </mat-card-actions> -->
+      </mat-card>
+    </div>
+  </ng-container>
+</section>

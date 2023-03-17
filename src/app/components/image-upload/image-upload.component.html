@@ -1,0 +1,18 @@
+<mat-form-field>
+  <div class="Image_upload">
+    <input
+      matInput
+      [value]="selectedFileNames.length ? selectedFileNames : 'Select Images'"
+    />
+    <mat-icon>image</mat-icon>
+
+    <input
+      type="file"
+      id="fileInput"
+      name="fileInput"
+      accept="image/*"
+      multiple
+      (change)="selectFiles($event)"
+    />
+  </div>
+</mat-form-field>

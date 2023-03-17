@@ -1,1 +1,126 @@
-<p>add-room-page works!</p>
+<main>
+  <mat-toolbar>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Add @ Room</span>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+      routerLink="/home"
+    >
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </mat-toolbar>
+  <section>
+    <div class="addRoom">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Ex. Name"
+            [(ngModel)]="addRoom.ownerName"
+            name="ownerName"
+          />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Mobile Number</mat-label>
+          <input
+            type="number"
+            matInput
+            placeholder="Ex. Mobile"
+            [(ngModel)]="addRoom.ownerMobile"
+            name="ownerMobile"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Room Type</mat-label>
+          <mat-select [(ngModel)]="addRoom.roomType" name="roomType">
+            <mat-option *ngFor="let type of rooms" [value]="type">
+              {{ type }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>Tenants</mat-label>
+          <mat-select [(ngModel)]="addRoom.tenants" name="tenants">
+            <mat-option *ngFor="let type of tenants" [value]="type">
+              {{ type }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="checkbox">
+          <mat-checkbox
+            class="example-margin"
+            style="width: 50%; float: left"
+            [(ngModel)]="addRoom.isFurnished"
+            name="furnished"
+            >Furnished</mat-checkbox
+          >
+          <mat-checkbox
+            class="example-margin"
+            style="width: 50%; float: right"
+            [(ngModel)]="addRoom.isParking"
+            name="parking"
+            >Parking</mat-checkbox
+          >
+        </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Area</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Ex. Locality"
+            [(ngModel)]="addRoom.locality"
+            name="area"
+          />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>City</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Ex. City"
+            [(ngModel)]="addRoom.city"
+            name="city"
+          />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Pincode</mat-label>
+          <input
+            type="number"
+            matInput
+            placeholder="Ex. Pincode"
+            [(ngModel)]="addRoom.pincode"
+            name="pincode"
+          />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Rent per Month</mat-label>
+          <input
+            type="number"
+            matInput
+            placeholder="Ex. Price"
+            [(ngModel)]="addRoom.price"
+            name="price"
+          />
+        </mat-form-field>
+        <!----------------------------- Image Uploader ---------------------------->
+        <app-image-upload (fileEmitter)="getImage($event)"></app-image-upload>
+        <div class="save_button">
+          <button mat-raised-button color="accent" (click)="saveRoom()">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>

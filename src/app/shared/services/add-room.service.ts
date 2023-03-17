@@ -10,10 +10,10 @@ export class AddRoomService {
   api = 'room.json';
   constructor(private httpService: HttpService) { }
   fetchRoomDetails() {
-    return this.httpService.get(`${this.api}`).toPromise();
+    return this.httpService.get(`${this.api}`);
   }
 
   saveRoomDetails(roomData: AddRoom) {
-    return this.httpService.post(`${this.api}`, JSON.stringify(roomData)).toPromise();
+    return this.httpService.post(`${this.api}`, JSON.stringify(roomData));
   }
 }

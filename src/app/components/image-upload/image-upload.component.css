@@ -1,25 +1,4 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
-  mat-toolbar{
-    background-color: black !important;
-    color: #ffff;
-    /* position: fixed;
-    top: 0; */
-  }
-  .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  /* Upload image styles */
-
-  
-  #fileInput {
+#fileInput {
     position: absolute;
     cursor: pointer;
     z-index: 10;

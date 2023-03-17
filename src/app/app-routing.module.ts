@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddRoomPageComponent } from './modules/add-room-page/add-room-page.component';
 import { HomePageComponent } from './modules/home-page/home-page.component';
 
 const routes: Routes = [
   { path: "", component: HomePageComponent },
+  { path: "home", component: HomePageComponent },
+  { path: "add-room", component: AddRoomPageComponent },
+
 ];
 
 @NgModule({

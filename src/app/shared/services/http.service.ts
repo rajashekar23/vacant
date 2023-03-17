@@ -4,7 +4,7 @@ import { Props } from 'src/app/constants/props';
 
 @Injectable()
 export class HttpService {
-  // headers: HttpHeaders;
+  headers: HttpHeaders = new HttpHeaders;
   CONTENT_TYPE: string = "application/json; charset=utf-8";
   // CONTENT_TYPE: string = "multipart/form-data;";
 
